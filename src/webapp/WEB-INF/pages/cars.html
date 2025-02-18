@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Все машины:</title>
-
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/style.css}">
 </head>
 <body>
 <h1>Список доступных машин:</h1>
-<table class = "table table-dark">
-    <thead>
-    <tr>
-        <th scope="col">Brand</th>
-        <th scope="col">Model</th>
-        <th scope="col">Year</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="car : ${cars}">
-        <td th:text = "${car.getBrand()}"/>
-        <td th:text = "${car.getModel()}"/>
-        <td th:text = "${car.getYear()}"/>
-    </tr>
-    </tbody>
-</table>
+<div>
+    <table border="1">
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year </th>
+        </tr>
+
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.getBrand()}"/>
+            <td th:text="${car.getModel()}"/>
+            <td th:text="${car.getYear()}"/>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
